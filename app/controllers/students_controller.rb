@@ -10,12 +10,12 @@ class StudentsController < ApplicationController
     set_student
   end
 
-  def update
+  def activate
 
     set_student
     @student.toggleActive
     redirect_to "/students/#{@student.id}"
-    
+
   end
 
 
