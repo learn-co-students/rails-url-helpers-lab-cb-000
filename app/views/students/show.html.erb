@@ -1,1 +1,5 @@
 <h1><%= @student.to_s %></h1>
+
+<h2><%=@status_string%></h2>
+
+<div><%= link_to "toggle your status", activate_student_path(@student) %></div>
