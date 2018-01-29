@@ -10,13 +10,15 @@ class StudentsController < ApplicationController
 
   def activate
     set_student
-     if @student.active == false
-       @student.active = true
-       @student.save
-     else
-       @student.active = false
-       @student.save
-     end
+#     if @student.active == false
+#       @student.active = true
+#       @student.save
+#     else
+#       @student.active = false
+#       @student.save
+#     end
+    @student.active = !@student.active
+    @student.save
     redirect_to @student
   end
 
