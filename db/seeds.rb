@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Student.destroy_all
+
+def seed_students(student_names)
+  student_names.each do |name|
+    name_arr = name.split(" ")
+    Student.create!(first_name: name_arr.first, last_name: name_arr.last)
+  end
+
+  p "Created #{Student.count} Students"
+end
+
+names = ["Jughead Jones", "Betty Cooper", "Veronica Lodge", "Archie Andrews", "Cheryl Blossom"]
+
+seed_students(names)
