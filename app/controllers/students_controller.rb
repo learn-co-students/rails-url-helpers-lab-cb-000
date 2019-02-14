@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    binding.pry
   end
 
   def show
@@ -16,5 +17,8 @@ class StudentsController < ApplicationController
 
     def activate
       @student = Student.find(params[:id])
+      @student.activate = !@student.activate
+      @student.save
+      redirect "students/#{params[:id]}"
     end
 end
