@@ -3,3 +3,6 @@
     <div><%= student.first_name + " " + student.last_name %></div>
   <% end %>
 </div>
+<% @students.each do |stud| %>
+  <div><%= link_to stud.to_s, student_path(stud) %></div>
+<% end %>
